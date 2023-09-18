@@ -34,9 +34,6 @@
             button1 = new Button();
             tabControl1 = new TabControl();
             info = new TabPage();
-            textBox6 = new TextBox();
-            button3 = new Button();
-            label7 = new Label();
             textBox5 = new TextBox();
             label6 = new Label();
             textBox4 = new TextBox();
@@ -48,6 +45,10 @@
             textBox2 = new TextBox();
             label2 = new Label();
             option = new TabPage();
+            groupBox3 = new GroupBox();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
+            checkBox5 = new CheckBox();
             groupBox2 = new GroupBox();
             button4 = new Button();
             label12 = new Label();
@@ -55,7 +56,15 @@
             textBox8 = new TextBox();
             checkBox4 = new CheckBox();
             groupBox1 = new GroupBox();
+            button3 = new Button();
+            label16 = new Label();
+            label7 = new Label();
+            pictureBox2 = new PictureBox();
+            label14 = new Label();
+            label13 = new Label();
+            button6 = new Button();
             label10 = new Label();
+            pictureBox1 = new PictureBox();
             label9 = new Label();
             textBox7 = new TextBox();
             label8 = new Label();
@@ -65,14 +74,17 @@
             button2 = new Button();
             openFileDialog1 = new OpenFileDialog();
             folderBrowserDialog1 = new FolderBrowserDialog();
-            openFileDialog2 = new OpenFileDialog();
             openFileDialog3 = new OpenFileDialog();
-            linkLabel1 = new LinkLabel();
+            button5 = new Button();
+            openFileDialog4 = new OpenFileDialog();
             tabControl1.SuspendLayout();
             info.SuspendLayout();
             option.SuspendLayout();
+            groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -86,7 +98,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 15);
+            label1.Location = new Point(11, 15);
             label1.Name = "label1";
             label1.Size = new Size(135, 20);
             label1.TabIndex = 1;
@@ -96,9 +108,9 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.Location = new Point(648, 409);
+            button1.Location = new Point(853, 426);
             button1.Name = "button1";
-            button1.Size = new Size(140, 29);
+            button1.Size = new Size(139, 29);
             button1.TabIndex = 2;
             button1.Text = "Create Template";
             button1.UseVisualStyleBackColor = true;
@@ -109,19 +121,16 @@
             tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabControl1.Controls.Add(info);
             tabControl1.Controls.Add(option);
-            tabControl1.Location = new Point(0, 38);
+            tabControl1.Location = new Point(0, 37);
             tabControl1.MinimumSize = new Size(0, 300);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(788, 365);
+            tabControl1.Size = new Size(994, 382);
             tabControl1.TabIndex = 3;
             // 
             // info
             // 
             info.AutoScroll = true;
-            info.Controls.Add(textBox6);
-            info.Controls.Add(button3);
-            info.Controls.Add(label7);
             info.Controls.Add(textBox5);
             info.Controls.Add(label6);
             info.Controls.Add(textBox4);
@@ -135,37 +144,10 @@
             info.Location = new Point(4, 29);
             info.Name = "info";
             info.Padding = new Padding(3);
-            info.Size = new Size(780, 332);
+            info.Size = new Size(986, 349);
             info.TabIndex = 0;
             info.Text = "Addon Info";
             info.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(103, 207);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(244, 27);
-            textBox6.TabIndex = 15;
-            // 
-            // button3
-            // 
-            button3.Cursor = Cursors.Hand;
-            button3.Location = new Point(353, 207);
-            button3.Name = "button3";
-            button3.Size = new Size(93, 29);
-            button3.TabIndex = 14;
-            button3.Text = "Browse..";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(8, 211);
-            label7.Name = "label7";
-            label7.Size = new Size(89, 20);
-            label7.TabIndex = 13;
-            label7.Text = "Addon Icon:";
             // 
             // textBox5
             // 
@@ -186,7 +168,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(108, 134);
+            textBox4.Location = new Point(107, 133);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(171, 27);
             textBox4.TabIndex = 10;
@@ -203,7 +185,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(120, 90);
+            textBox3.Location = new Point(120, 91);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(171, 27);
             textBox3.TabIndex = 8;
@@ -239,7 +221,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(176, 10);
+            textBox2.Location = new Point(176, 11);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(171, 27);
             textBox2.TabIndex = 4;
@@ -256,6 +238,9 @@
             // 
             // option
             // 
+            option.AutoScroll = true;
+            option.Controls.Add(groupBox3);
+            option.Controls.Add(checkBox5);
             option.Controls.Add(groupBox2);
             option.Controls.Add(checkBox4);
             option.Controls.Add(groupBox1);
@@ -265,20 +250,68 @@
             option.Location = new Point(4, 29);
             option.Name = "option";
             option.Padding = new Padding(3);
-            option.Size = new Size(780, 332);
+            option.Size = new Size(986, 349);
             option.TabIndex = 1;
-            option.Text = "Addon Options";
+            option.Text = "Templates and Options";
             option.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            groupBox3.Controls.Add(radioButton2);
+            groupBox3.Controls.Add(radioButton1);
+            groupBox3.Enabled = false;
+            groupBox3.Location = new Point(449, 15);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(170, 93);
+            groupBox3.TabIndex = 8;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Derma Options";
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Checked = true;
+            radioButton2.Location = new Point(6, 56);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(113, 24);
+            radioButton2.TabIndex = 1;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Basic Derma";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(6, 26);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(145, 24);
+            radioButton1.TabIndex = 0;
+            radioButton1.Text = "Advanced Derma";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Location = new Point(6, 135);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(142, 24);
+            checkBox5.TabIndex = 7;
+            checkBox5.Text = "Derma Template";
+            checkBox5.UseVisualStyleBackColor = true;
+            checkBox5.CheckedChanged += checkBox5_CheckedChanged;
             // 
             // groupBox2
             // 
+            groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             groupBox2.Controls.Add(button4);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(textBox8);
-            groupBox2.Location = new Point(499, 158);
+            groupBox2.Enabled = false;
+            groupBox2.Location = new Point(625, 457);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(275, 125);
+            groupBox2.Size = new Size(267, 128);
             groupBox2.TabIndex = 6;
             groupBox2.TabStop = false;
             groupBox2.Text = "Map Options";
@@ -286,9 +319,9 @@
             // button4
             // 
             button4.Cursor = Cursors.Hand;
-            button4.Location = new Point(184, 26);
+            button4.Location = new Point(184, 27);
             button4.Name = "button4";
-            button4.Size = new Size(85, 29);
+            button4.Size = new Size(77, 29);
             button4.TabIndex = 7;
             button4.Text = "Browse..";
             button4.UseVisualStyleBackColor = true;
@@ -314,7 +347,7 @@
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(56, 26);
+            textBox8.Location = new Point(56, 27);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(125, 27);
             textBox8.TabIndex = 0;
@@ -332,16 +365,95 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            groupBox1.Controls.Add(button3);
+            groupBox1.Controls.Add(label16);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(pictureBox2);
+            groupBox1.Controls.Add(label14);
+            groupBox1.Controls.Add(label13);
+            groupBox1.Controls.Add(button6);
             groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(textBox7);
             groupBox1.Controls.Add(label8);
-            groupBox1.Location = new Point(499, 15);
+            groupBox1.Enabled = false;
+            groupBox1.Location = new Point(625, 6);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(275, 137);
+            groupBox1.Size = new Size(272, 445);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Gamemode Options";
+            // 
+            // button3
+            // 
+            button3.Cursor = Cursors.Hand;
+            button3.Location = new Point(6, 407);
+            button3.Name = "button3";
+            button3.Size = new Size(171, 29);
+            button3.TabIndex = 23;
+            button3.Text = "Browse..";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(10, 379);
+            label16.Name = "label16";
+            label16.Size = new Size(116, 20);
+            label16.TabIndex = 22;
+            label16.Text = "Max size: 32x32";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(10, 359);
+            label7.Name = "label7";
+            label7.Size = new Size(78, 20);
+            label7.TabIndex = 21;
+            label7.Text = "Small Icon";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Silver;
+            pictureBox2.Location = new Point(184, 359);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(82, 77);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 20;
+            pictureBox2.TabStop = false;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(72, 289);
+            label14.Name = "label14";
+            label14.Size = new Size(137, 20);
+            label14.TabIndex = 19;
+            label14.Text = "Max size: 128x1024";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(8, 146);
+            label13.Name = "label13";
+            label13.Size = new Size(152, 20);
+            label13.TabIndex = 18;
+            label13.Text = "Gamemode Title Icon";
+            // 
+            // button6
+            // 
+            button6.Cursor = Cursors.Hand;
+            button6.Location = new Point(6, 312);
+            button6.Name = "button6";
+            button6.Size = new Size(260, 29);
+            button6.TabIndex = 5;
+            button6.Text = "Browse..";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // label10
             // 
@@ -351,6 +463,16 @@
             label10.Size = new Size(189, 20);
             label10.TabIndex = 17;
             label10.Text = "Ex: \"gm_\" = \"gm_construct\"";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Silver;
+            pictureBox1.Location = new Point(6, 169);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(261, 117);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // label9
             // 
@@ -364,7 +486,7 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(93, 30);
+            textBox7.Location = new Point(93, 29);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(103, 27);
             textBox7.TabIndex = 15;
@@ -373,7 +495,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(8, 30);
+            label8.Location = new Point(8, 29);
             label8.Name = "label8";
             label8.Size = new Size(79, 20);
             label8.TabIndex = 14;
@@ -388,6 +510,7 @@
             checkBox3.TabIndex = 2;
             checkBox3.Text = "Gamemode Template";
             checkBox3.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
             // 
             // checkBox2
             // 
@@ -398,6 +521,7 @@
             checkBox2.TabIndex = 1;
             checkBox2.Text = "Map Template";
             checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // checkBox1
             // 
@@ -412,7 +536,7 @@
             // button2
             // 
             button2.Cursor = Cursors.Hand;
-            button2.Location = new Point(580, 12);
+            button2.Location = new Point(581, 12);
             button2.Name = "button2";
             button2.Size = new Size(93, 29);
             button2.TabIndex = 4;
@@ -425,34 +549,33 @@
             openFileDialog1.FileName = "openFileDialog1";
             openFileDialog1.Filter = "Image files (*.png)|*.png|All files (*.*)|*.*\"";
             // 
-            // openFileDialog2
-            // 
-            openFileDialog2.FileName = "openFileDialog1";
-            openFileDialog2.Filter = "Image files (*.png)|*.png|All files (*.*)|*.*\"";
-            // 
             // openFileDialog3
             // 
             openFileDialog3.FileName = "openFileDialog3";
             openFileDialog3.Filter = "Source Map Files (*.bsp)|*.bsp";
             // 
-            // linkLabel1
+            // button5
             // 
-            linkLabel1.Anchor = AnchorStyles.Right;
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(729, 16);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(50, 20);
-            linkLabel1.TabIndex = 7;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "About";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button5.Location = new Point(910, 12);
+            button5.Name = "button5";
+            button5.Size = new Size(83, 29);
+            button5.TabIndex = 5;
+            button5.Text = "About";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // openFileDialog4
+            // 
+            openFileDialog4.FileName = "openFileDialog4";
+            openFileDialog4.Filter = "Image files (*.png)|*.png|All files (*.*)|*.*";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(linkLabel1);
+            ClientSize = new Size(1005, 468);
+            Controls.Add(button5);
             Controls.Add(button2);
             Controls.Add(tabControl1);
             Controls.Add(button1);
@@ -466,10 +589,14 @@
             info.PerformLayout();
             option.ResumeLayout(false);
             option.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -496,15 +623,11 @@
         private CheckBox checkBox1;
         private CheckBox checkBox3;
         private Button button2;
-        private TextBox textBox6;
-        private Button button3;
-        private Label label7;
         private OpenFileDialog openFileDialog1;
         private FolderBrowserDialog folderBrowserDialog1;
         private GroupBox groupBox1;
         private Label label8;
         private TextBox textBox7;
-        private OpenFileDialog openFileDialog2;
         private CheckBox checkBox4;
         private Label label10;
         private Label label9;
@@ -514,6 +637,19 @@
         private TextBox textBox8;
         private Button button4;
         private OpenFileDialog openFileDialog3;
-        private LinkLabel linkLabel1;
+        private Button button5;
+        private OpenFileDialog openFileDialog4;
+        private Button button6;
+        private PictureBox pictureBox1;
+        private Label label14;
+        private Label label13;
+        private Button button3;
+        private Label label16;
+        private Label label7;
+        private PictureBox pictureBox2;
+        private GroupBox groupBox3;
+        private RadioButton radioButton1;
+        private CheckBox checkBox5;
+        private RadioButton radioButton2;
     }
 }

@@ -88,7 +88,7 @@
             // linkLabel4
             // 
             linkLabel4.AutoSize = true;
-            linkLabel4.Location = new Point(158, 114);
+            linkLabel4.Location = new Point(151, 105);
             linkLabel4.Name = "linkLabel4";
             linkLabel4.Size = new Size(71, 20);
             linkLabel4.TabIndex = 7;
@@ -99,7 +99,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(6, 114);
+            label4.Location = new Point(6, 105);
             label4.Name = "label4";
             label4.Size = new Size(150, 20);
             label4.TabIndex = 6;
@@ -108,12 +108,12 @@
             // linkLabel3
             // 
             linkLabel3.AutoSize = true;
-            linkLabel3.Location = new Point(114, 86);
+            linkLabel3.Location = new Point(107, 80);
             linkLabel3.Name = "linkLabel3";
-            linkLabel3.Size = new Size(85, 20);
+            linkLabel3.Size = new Size(67, 20);
             linkLabel3.TabIndex = 5;
             linkLabel3.TabStop = true;
-            linkLabel3.Text = "TomDotBat";
+            linkLabel3.Text = "NoSharp";
             linkLabel3.LinkClicked += linkLabel3_LinkClicked;
             // 
             // linkLabel2
@@ -130,7 +130,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(98, 23);
+            linkLabel1.Location = new Point(98, 25);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(85, 20);
             linkLabel1.TabIndex = 3;
@@ -141,16 +141,16 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 86);
+            label3.Location = new Point(6, 80);
             label3.Name = "label3";
-            label3.Size = new Size(113, 20);
+            label3.Size = new Size(107, 20);
             label3.TabIndex = 2;
-            label3.Text = "Autorun Scripts:";
+            label3.Text = "Autorun Script:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 53);
+            label2.Location = new Point(6, 55);
             label2.Name = "label2";
             label2.Size = new Size(132, 20);
             label2.TabIndex = 1;
@@ -159,7 +159,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 23);
+            label1.Location = new Point(6, 25);
             label1.Name = "label1";
             label1.Size = new Size(98, 20);
             label1.TabIndex = 0;

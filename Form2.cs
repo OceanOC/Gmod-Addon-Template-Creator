@@ -81,23 +81,36 @@ namespace GmodAddonCreator
             }
             if (!Directory.Exists(appdat + @"\GMOD Template Creator\maps"))
             {
-                Directory.CreateDirectory(appdat + @"\GMOD Template Creator\gamemode");
+                Directory.CreateDirectory(appdat + @"\GMOD Template Creator\maps");
                 WebClient client = new WebClient();
-                client.DownloadFile(@"https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/autorun/sh_loader.lua", appdat + @"\GMOD Template Creator\autorun\sh_loader.lua");
+                client.DownloadFile(@"https://raw.githubusercontent.com/OceanOC/Gmod-Addon-Template-Creator/master/examples/gatc_example.bsp", appdat + @"\GMOD Template Creator\maps\gatc_example.bsp");
                 client.Dispose();
                 progressBar1.Value += 10;
                 richTextBox1.Text += "Downloaded: maps\\gatc_example.bsp\n";
             }
             if (!Directory.Exists(appdat + @"\GMOD Template Creator\gamemode"))
             {
+                Directory.CreateDirectory(appdat + @"\GMOD Template Creator\gamemode");
                 WebClient client = new WebClient();
-                client.DownloadFile(@"https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/autorun/sh_loader.lua", appdat + @"\GMOD Template Creator\autorun\init.lua");
+                client.DownloadFile(@"https://raw.githubusercontent.com/OceanOC/Gmod-Addon-Template-Creator/master/gamemode/init.lua", appdat + @"\GMOD Template Creator\gamemode\init.lua");
                 progressBar1.Value += 10;
                 richTextBox1.Text += "Downloaded: gamemode\\init.lua";
-                client.DownloadFile(@"https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/autorun/sh_loader.lua", appdat + @"\GMOD Template Creator\autorun\cl_init.lua");
+                client.DownloadFile(@"https://raw.githubusercontent.com/OceanOC/Gmod-Addon-Template-Creator/master/gamemode/cl_init.lua", appdat + @"\GMOD Template Creator\gamemode\cl_init.lua");
                 client.Dispose();
                 progressBar1.Value += 10;
                 richTextBox1.Text += "Downloaded: gamemode\\cl_init.lua";
+            }
+            if (!Directory.Exists(appdat + @"\GMOD Template Creator\derma"))
+            {
+                Directory.CreateDirectory(appdat + @"\GMOD Template Creator\derma");
+                WebClient client = new WebClient();
+                client.DownloadFile(@"https://raw.githubusercontent.com/OceanOC/Gmod-Addon-Template-Creator/master/gamemode/init.lua", appdat + @"\GMOD Template Creator\derma\basic.lua");
+                progressBar1.Value += 10;
+                richTextBox1.Text += "Downloaded: derma\\basic.lua";
+                client.DownloadFile(@"https://raw.githubusercontent.com/OceanOC/Gmod-Addon-Template-Creator/master/gamemode/init.lua", appdat + @"\GMOD Template Creator\derma\advanced.lua");
+                progressBar1.Value += 10;
+                richTextBox1.Text += "Downloaded: derma\\advanced.lua";
+                client.Dispose();
             }
         }
 
