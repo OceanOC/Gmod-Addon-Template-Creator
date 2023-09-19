@@ -37,6 +37,7 @@
             richTextBox1 = new RichTextBox();
             button1 = new Button();
             linkLabel1 = new LinkLabel();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             SuspendLayout();
             // 
             // progressBar1
@@ -117,6 +118,10 @@
             linkLabel1.Text = "TomDotBat";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
+            // backgroundWorker1
+            // 
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -150,5 +155,6 @@
         private RichTextBox richTextBox1;
         private Button button1;
         private LinkLabel linkLabel1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -45,9 +45,6 @@
             textBox2 = new TextBox();
             label2 = new Label();
             option = new TabPage();
-            groupBox3 = new GroupBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
             checkBox5 = new CheckBox();
             groupBox2 = new GroupBox();
             button4 = new Button();
@@ -80,7 +77,6 @@
             tabControl1.SuspendLayout();
             info.SuspendLayout();
             option.SuspendLayout();
-            groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -93,7 +89,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(430, 27);
             textBox1.TabIndex = 0;
-            textBox1.Text = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\";
+            textBox1.Text = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod";
             // 
             // label1
             // 
@@ -108,7 +104,7 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.Location = new Point(853, 426);
+            button1.Location = new Point(853, 445);
             button1.Name = "button1";
             button1.Size = new Size(139, 29);
             button1.TabIndex = 2;
@@ -125,7 +121,7 @@
             tabControl1.MinimumSize = new Size(0, 300);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(994, 382);
+            tabControl1.Size = new Size(994, 401);
             tabControl1.TabIndex = 3;
             // 
             // info
@@ -144,7 +140,7 @@
             info.Location = new Point(4, 29);
             info.Name = "info";
             info.Padding = new Padding(3);
-            info.Size = new Size(986, 349);
+            info.Size = new Size(986, 368);
             info.TabIndex = 0;
             info.Text = "Addon Info";
             info.UseVisualStyleBackColor = true;
@@ -239,7 +235,6 @@
             // option
             // 
             option.AutoScroll = true;
-            option.Controls.Add(groupBox3);
             option.Controls.Add(checkBox5);
             option.Controls.Add(groupBox2);
             option.Controls.Add(checkBox4);
@@ -250,45 +245,10 @@
             option.Location = new Point(4, 29);
             option.Name = "option";
             option.Padding = new Padding(3);
-            option.Size = new Size(986, 349);
+            option.Size = new Size(986, 368);
             option.TabIndex = 1;
             option.Text = "Templates and Options";
             option.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            groupBox3.Controls.Add(radioButton2);
-            groupBox3.Controls.Add(radioButton1);
-            groupBox3.Enabled = false;
-            groupBox3.Location = new Point(449, 15);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(170, 93);
-            groupBox3.TabIndex = 8;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Derma Options";
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Checked = true;
-            radioButton2.Location = new Point(6, 56);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(113, 24);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Basic Derma";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(6, 26);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(145, 24);
-            radioButton1.TabIndex = 0;
-            radioButton1.Text = "Advanced Derma";
-            radioButton1.UseVisualStyleBackColor = true;
             // 
             // checkBox5
             // 
@@ -309,7 +269,7 @@
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(textBox8);
             groupBox2.Enabled = false;
-            groupBox2.Location = new Point(625, 457);
+            groupBox2.Location = new Point(332, 15);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(267, 128);
             groupBox2.TabIndex = 6;
@@ -378,7 +338,7 @@
             groupBox1.Controls.Add(textBox7);
             groupBox1.Controls.Add(label8);
             groupBox1.Enabled = false;
-            groupBox1.Location = new Point(625, 6);
+            groupBox1.Location = new Point(605, 6);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(272, 445);
             groupBox1.TabIndex = 4;
@@ -418,6 +378,8 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Silver;
+            pictureBox2.ErrorImage = null;
+            pictureBox2.InitialImage = null;
             pictureBox2.Location = new Point(184, 359);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(82, 77);
@@ -467,6 +429,8 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Silver;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.InitialImage = null;
             pictureBox1.Location = new Point(6, 169);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(261, 117);
@@ -556,8 +520,8 @@
             // 
             // button5
             // 
-            button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button5.Location = new Point(910, 12);
+            button5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button5.Location = new Point(4, 446);
             button5.Name = "button5";
             button5.Size = new Size(83, 29);
             button5.TabIndex = 5;
@@ -574,7 +538,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1005, 468);
+            ClientSize = new Size(1005, 487);
             Controls.Add(button5);
             Controls.Add(button2);
             Controls.Add(tabControl1);
@@ -582,6 +546,7 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(1023, 534);
             Name = "Form1";
             Text = "GMOD Addon Template Creator";
             tabControl1.ResumeLayout(false);
@@ -589,8 +554,6 @@
             info.PerformLayout();
             option.ResumeLayout(false);
             option.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -647,9 +610,6 @@
         private Label label16;
         private Label label7;
         private PictureBox pictureBox2;
-        private GroupBox groupBox3;
-        private RadioButton radioButton1;
         private CheckBox checkBox5;
-        private RadioButton radioButton2;
     }
 }

@@ -5,12 +5,12 @@ namespace GmodAddonCreator
 {
     public partial class Form1 : Form
     {
-        private string gmfolder;
         private string appdat = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         private string catgory = "";
         private string mapfilter;
         private string mapfile;
-
+        private bool iicon = false;
+        private bool sicon = false;
         public Form1()
         {
             InitializeComponent();
@@ -35,7 +35,6 @@ namespace GmodAddonCreator
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = folderBrowserDialog1.SelectedPath;
-                gmfolder = textBox1.Text;
             }
         }
 
@@ -69,6 +68,14 @@ namespace GmodAddonCreator
                 if (checkBox2.Checked)
                 {
                     mapfile = textBox8.Text;
+                }
+                if (pictureBox1.Image != null)
+                {
+                    iicon = true;
+                }
+                if (pictureBox2.Image != null)
+                {
+                    sicon = true;
                 }
                 Debug.Print(addonfolder);
                 Directory.CreateDirectory(addonfolder);
@@ -137,19 +144,19 @@ namespace GmodAddonCreator
                         sw.WriteLine("  --Do stuff");
                         sw.WriteLine("end");
                     }
+                    if (iicon)
+                    {
+                        File.Copy(openFileDialog4.FileName, addonfolder + @"\gamemodes\" + textBox2.Text.ToLower().Replace(" ", "") + @"\logo.png");
+                    }
+                    if (sicon)
+                    {
+                        File.Copy(openFileDialog1.FileName, addonfolder + @"\gamemodes\" + textBox2.Text.ToLower().Replace(" ", "") + @"\logo24.png");
+                    }
                 }
                 if (checkBox5.Checked)
                 {
-                    if (radioButton1.Checked)
-                    {
-                        Directory.CreateDirectory(addonfolder + @"\lua\derma");
-                        File.Copy(appdat + "\\GMOD Template Creator\\derma\\advanced.lua", addonfolder + @"\lua\derma\advanced.lua");
-                    }
-                    if (radioButton2.Checked)
-                    {
-                        Directory.CreateDirectory(addonfolder + @"\lua\derma");
-                        File.Copy(appdat + "\\GMOD Template Creator\\derma\\basic.lua", addonfolder + @"\lua\derma\basic.lua");
-                    }
+                    Directory.CreateDirectory(addonfolder + @"\lua\derma");
+                    File.Copy(appdat + "\\GMOD Template Creator\\derma\\basic.lua",addonfolder + @"\lua\client\basic.lua");
                 }
             }
         }
@@ -232,14 +239,6 @@ namespace GmodAddonCreator
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox5.Checked)
-            {
-                groupBox3.Enabled = true;
-            }
-            else
-            {
-                groupBox3.Enabled = false;
-            }
         }
     }
 }
