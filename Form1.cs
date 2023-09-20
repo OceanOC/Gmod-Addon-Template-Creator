@@ -52,7 +52,8 @@ namespace GmodAddonCreator
             }
             else
             {
-                string addonfolder = textBox1.Text + @"\garrysmod\addons\" + textBox2.Text.ToLower();
+                string addonfolder = textBox1.Text + @"\garrysmod\addons\" + textBox2.Text.ToLower().Replace(" ", "");
+                // Making sure nothing errors out
                 if (comboBox1 == null)
                 {
                     comboBox1.SelectedText = "OTHER";
@@ -77,12 +78,13 @@ namespace GmodAddonCreator
                 {
                     sicon = true;
                 }
-                Debug.Print(addonfolder);
+                // Create essential directorys
                 Directory.CreateDirectory(addonfolder);
                 Directory.CreateDirectory(addonfolder + @"\gamemodes");
                 Directory.CreateDirectory(addonfolder + @"\lua");
                 if (checkBox2.Checked)
                 {
+                    // map
                     Directory.CreateDirectory(addonfolder + @"\maps");
                     if (textBox8.Text == "")
                     {
@@ -95,6 +97,7 @@ namespace GmodAddonCreator
                 }
                 if (checkBox1.Checked)
                 {
+                    // swep
                     Directory.CreateDirectory(addonfolder + @"\lua\weapons");
                     Directory.CreateDirectory(addonfolder + @"\lua\weapons\swep_weapon");
                     Directory.CreateDirectory(addonfolder + @"\lua\autorun");
@@ -105,6 +108,7 @@ namespace GmodAddonCreator
                 }
                 if (checkBox4.Checked)
                 {
+                    // tool
                     Directory.CreateDirectory(addonfolder + @"\lua\weapons");
                     Directory.CreateDirectory(addonfolder + @"\lua\weapons\gmod_tool");
                     Directory.CreateDirectory(addonfolder + @"\lua\weapons\gmod_tool\stools");
@@ -112,6 +116,7 @@ namespace GmodAddonCreator
                 }
                 if (checkBox3.Checked)
                 {
+                    // gamemode
                     if (textBox7.Text == "*")
                     {
                         mapfilter = "";
@@ -136,6 +141,7 @@ namespace GmodAddonCreator
                     File.Create(addonfolder + @"\gamemodes\" + textBox2.Text.ToLower().Replace(" ", "") + @"\gamemode\shared.lua").Dispose();
                     using (StreamWriter sw = new StreamWriter(addonfolder + @"\gamemodes\" + textBox2.Text.ToLower().Replace(" ", "") + @"\gamemode\shared.lua"))
                     {
+                        sw.WriteLine("-- Created using GMOD Addon Template Creator");
                         sw.WriteLine("GM.Name = \"" + textBox2.Text + "\"");
                         sw.WriteLine("GM.Author = \"" + textBox3.Text + "\"");
                         sw.WriteLine("GM.Email = \"" + textBox4.Text + "\"");
@@ -143,6 +149,7 @@ namespace GmodAddonCreator
                         sw.WriteLine("function GM:Initialize()");
                         sw.WriteLine("  --Do stuff");
                         sw.WriteLine("end");
+                        sw.Dispose();
                     }
                     if (iicon)
                     {
@@ -155,8 +162,51 @@ namespace GmodAddonCreator
                 }
                 if (checkBox5.Checked)
                 {
+                    // derma
                     Directory.CreateDirectory(addonfolder + @"\lua\derma");
-                    File.Copy(appdat + "\\GMOD Template Creator\\derma\\basic.lua",addonfolder + @"\lua\client\basic.lua");
+                    File.Copy(appdat + "\\GMOD Template Creator\\derma\\basic.lua", addonfolder + @"\lua\client\basic.lua");
+                }
+
+                if (checkBox6.Checked)
+                {
+                    if (comboBox2.Text == null || comboBox3.Text == null || comboBox4.Text == null) {
+                        MessageBox.Show("Please select the required fields before creating a template", "GATC ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    } else { 
+                        // Pack to .gma
+                        string gmad = textBox1.Text + @"\bin\";
+                        File.Create(addonfolder + @"\addon.json").Dispose();
+                        using (StreamWriter sw = new StreamWriter(addonfolder + @"\addon.json"))
+                        {
+                            sw.WriteLine("{");
+                            sw.WriteLine("  \"title\"   :   \"" + textBox2.Text + "\",");
+                            sw.WriteLine("  \"type\"   :   \"" + comboBox2.Text + "\",");
+                            sw.Write("  \"tags\"   :   [ \"" + comboBox3.Text + "\" ");
+                            if (comboBox4.Text != "null")
+                            {
+                                
+                                sw.Write(", \"" + comboBox4.Text + "\" ], \n");
+                            } else
+                            {
+                                sw.Write("], \n");
+                            }
+                            sw.WriteLine("  \"ignore\"   :   ");
+                            sw.WriteLine("  [");
+                            sw.WriteLine("      \"*.psd\",");
+                            sw.WriteLine("      \"*.vcproj\",");
+                            sw.WriteLine("      \"*.svn*\"");
+                            sw.WriteLine("  ]");
+                            sw.WriteLine("}");
+                            sw.Dispose();
+                        }
+                        Debug.WriteLine("/C \"" + gmad + "gmad.exe\" create \"" + addonfolder + "\" -out \"" + textBox1.Text + @"\garrysmod\addons\" + textBox2.Text + ".gma\"");
+                        Process process = new Process();
+                        ProcessStartInfo startInfo = new ProcessStartInfo();
+                        startInfo.FileName = "cmd.exe";
+                        startInfo.Arguments = "/C " + gmad + "gmad.exe create -folder \"" + addonfolder + "\" -out \"" + textBox1.Text + @"\garrysmod\addons\" + textBox2.Text.ToLower().Replace(" ", "_") + ".gma\"";
+                        process.StartInfo = startInfo;
+                        process.Start();
+                    }
                 }
             }
         }
