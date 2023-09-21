@@ -169,12 +169,14 @@ namespace GmodAddonCreator
 
                 if (checkBox6.Checked)
                 {
-                    if (comboBox2.Text == null || comboBox3.Text == null || comboBox4.Text == null) {
+                    if (comboBox2.Text == null || comboBox3.Text == null || comboBox4.Text == null)
+                    {
                         MessageBox.Show("Please select the required fields before creating a template", "GATC ERROR",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    } else { 
-                        // Pack to .gma
-                        string gmad = textBox1.Text + @"\bin\";
+                    }
+                    else
+                    {
+                        // Make JSON
                         File.Create(addonfolder + @"\addon.json").Dispose();
                         using (StreamWriter sw = new StreamWriter(addonfolder + @"\addon.json"))
                         {
@@ -184,9 +186,10 @@ namespace GmodAddonCreator
                             sw.Write("  \"tags\"   :   [ \"" + comboBox3.Text + "\" ");
                             if (comboBox4.Text != "null")
                             {
-                                
+
                                 sw.Write(", \"" + comboBox4.Text + "\" ], \n");
-                            } else
+                            }
+                            else
                             {
                                 sw.Write("], \n");
                             }
@@ -199,13 +202,6 @@ namespace GmodAddonCreator
                             sw.WriteLine("}");
                             sw.Dispose();
                         }
-                        Debug.WriteLine("/C \"" + gmad + "gmad.exe\" create \"" + addonfolder + "\" -out \"" + textBox1.Text + @"\garrysmod\addons\" + textBox2.Text + ".gma\"");
-                        Process process = new Process();
-                        ProcessStartInfo startInfo = new ProcessStartInfo();
-                        startInfo.FileName = "cmd.exe";
-                        startInfo.Arguments = "/C " + gmad + "gmad.exe create -folder \"" + addonfolder + "\" -out \"" + textBox1.Text + @"\garrysmod\addons\" + textBox2.Text.ToLower().Replace(" ", "_") + ".gma\"";
-                        process.StartInfo = startInfo;
-                        process.Start();
                     }
                 }
             }
@@ -221,8 +217,8 @@ namespace GmodAddonCreator
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AboutBox1 aboutBox1 = new AboutBox1();
-            aboutBox1.ShowDialog();
+            Form3 form = new Form3();
+            form.ShowDialog();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -289,6 +285,18 @@ namespace GmodAddonCreator
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox6.Checked)
+            {
+                groupBox3.Enabled = true;
+            }
+            else
+            {
+                groupBox3.Enabled = false;
+            }
         }
     }
 }

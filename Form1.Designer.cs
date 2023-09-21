@@ -34,6 +34,15 @@
             button1 = new Button();
             tabControl1 = new TabControl();
             info = new TabPage();
+            groupBox3 = new GroupBox();
+            comboBox2 = new ComboBox();
+            label19 = new Label();
+            label15 = new Label();
+            label17 = new Label();
+            comboBox4 = new ComboBox();
+            comboBox3 = new ComboBox();
+            label18 = new Label();
+            checkBox6 = new CheckBox();
             textBox5 = new TextBox();
             label6 = new Label();
             textBox4 = new TextBox();
@@ -68,15 +77,6 @@
             checkBox3 = new CheckBox();
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
-            gma = new TabPage();
-            label19 = new Label();
-            label18 = new Label();
-            comboBox4 = new ComboBox();
-            comboBox3 = new ComboBox();
-            label17 = new Label();
-            comboBox2 = new ComboBox();
-            label15 = new Label();
-            checkBox6 = new CheckBox();
             button2 = new Button();
             openFileDialog1 = new OpenFileDialog();
             folderBrowserDialog1 = new FolderBrowserDialog();
@@ -85,12 +85,12 @@
             openFileDialog4 = new OpenFileDialog();
             tabControl1.SuspendLayout();
             info.SuspendLayout();
+            groupBox3.SuspendLayout();
             option.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            gma.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
@@ -129,7 +129,6 @@
             tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabControl1.Controls.Add(info);
             tabControl1.Controls.Add(option);
-            tabControl1.Controls.Add(gma);
             tabControl1.Location = new Point(0, 28);
             tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.MinimumSize = new Size(0, 225);
@@ -141,6 +140,9 @@
             // info
             // 
             info.AutoScroll = true;
+            info.Controls.Add(groupBox3);
+            info.Controls.Add(label18);
+            info.Controls.Add(checkBox6);
             info.Controls.Add(textBox5);
             info.Controls.Add(label6);
             info.Controls.Add(textBox4);
@@ -160,9 +162,108 @@
             info.Text = "Addon Info";
             info.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            groupBox3.Controls.Add(comboBox2);
+            groupBox3.Controls.Add(label19);
+            groupBox3.Controls.Add(label15);
+            groupBox3.Controls.Add(label17);
+            groupBox3.Controls.Add(comboBox4);
+            groupBox3.Controls.Add(comboBox3);
+            groupBox3.Enabled = false;
+            groupBox3.Location = new Point(407, 8);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(371, 92);
+            groupBox3.TabIndex = 32;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "JSON Settings";
+            // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "ServerContent", "gamemode", "map", "weapon", "vehicle", "npc", "tool", "effects", "model", "entity" });
+            comboBox2.Location = new Point(157, 16);
+            comboBox2.Margin = new Padding(3, 2, 3, 2);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(133, 23);
+            comboBox2.TabIndex = 26;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.ForeColor = Color.Silver;
+            label19.Location = new Point(172, 72);
+            label19.Name = "label19";
+            label19.Size = new Size(177, 15);
+            label19.TabIndex = 31;
+            label19.Text = "(Use null to not use another tag)";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(6, 19);
+            label15.Name = "label15";
+            label15.Size = new Size(131, 15);
+            label15.TabIndex = 25;
+            label15.Text = "Addon Type (Required):";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(6, 49);
+            label17.Name = "label17";
+            label17.Size = new Size(130, 15);
+            label17.TabIndex = 27;
+            label17.Text = "Addon Tags (Required):";
+            // 
+            // comboBox4
+            // 
+            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "null", "fun", "roleplay", "scenic", "movie", "realism", "cartoon", "water", "comic", "build" });
+            comboBox4.Location = new Point(266, 47);
+            comboBox4.Margin = new Padding(3, 2, 3, 2);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(96, 23);
+            comboBox4.TabIndex = 29;
+            // 
+            // comboBox3
+            // 
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "fun", "roleplay", "scenic", "movie", "realism", "cartoon", "water", "comic", "build" });
+            comboBox3.Location = new Point(155, 47);
+            comboBox3.Margin = new Padding(3, 2, 3, 2);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(96, 23);
+            comboBox3.TabIndex = 28;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(254, 212);
+            label18.Name = "label18";
+            label18.Size = new Size(10, 15);
+            label18.TabIndex = 30;
+            label18.Text = ",";
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Location = new Point(6, 155);
+            checkBox6.Margin = new Padding(3, 2, 3, 2);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(83, 19);
+            checkBox6.TabIndex = 24;
+            checkBox6.Text = "Make .json";
+            checkBox6.UseVisualStyleBackColor = true;
+            checkBox6.CheckedChanged += checkBox6_CheckedChanged;
+            // 
             // textBox5
             // 
-            textBox5.Location = new Point(112, 126);
+            textBox5.Location = new Point(111, 126);
             textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(150, 23);
@@ -172,7 +273,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(7, 128);
+            label6.Location = new Point(6, 128);
             label6.Name = "label6";
             label6.Size = new Size(91, 15);
             label6.TabIndex = 11;
@@ -180,7 +281,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(94, 96);
+            textBox4.Location = new Point(93, 96);
             textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(150, 23);
@@ -190,7 +291,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(7, 99);
+            label5.Location = new Point(6, 99);
             label5.Name = "label5";
             label5.Size = new Size(78, 15);
             label5.TabIndex = 9;
@@ -198,7 +299,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(105, 64);
+            textBox3.Location = new Point(104, 64);
             textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(150, 23);
@@ -208,7 +309,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(7, 66);
+            label4.Location = new Point(6, 66);
             label4.Name = "label4";
             label4.Size = new Size(86, 15);
             label4.TabIndex = 7;
@@ -291,7 +392,7 @@
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(textBox8);
             groupBox2.Enabled = false;
-            groupBox2.Location = new Point(361, 4);
+            groupBox2.Location = new Point(293, 4);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 2, 3, 2);
@@ -365,7 +466,7 @@
             groupBox1.Controls.Add(textBox7);
             groupBox1.Controls.Add(label8);
             groupBox1.Enabled = false;
-            groupBox1.Location = new Point(601, 4);
+            groupBox1.Location = new Point(533, 4);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
@@ -534,106 +635,6 @@
             checkBox1.Text = "SWEP Template";
             checkBox1.UseVisualStyleBackColor = true;
             // 
-            // gma
-            // 
-            gma.Controls.Add(label19);
-            gma.Controls.Add(label18);
-            gma.Controls.Add(comboBox4);
-            gma.Controls.Add(comboBox3);
-            gma.Controls.Add(label17);
-            gma.Controls.Add(comboBox2);
-            gma.Controls.Add(label15);
-            gma.Controls.Add(checkBox6);
-            gma.Location = new Point(4, 24);
-            gma.Margin = new Padding(3, 2, 3, 2);
-            gma.Name = "gma";
-            gma.Size = new Size(862, 273);
-            gma.TabIndex = 2;
-            gma.Text = "GMA Options";
-            gma.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.ForeColor = Color.Silver;
-            label19.Location = new Point(368, 76);
-            label19.Name = "label19";
-            label19.Size = new Size(177, 15);
-            label19.TabIndex = 23;
-            label19.Text = "(Use null to not put another tag)";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(253, 77);
-            label18.Name = "label18";
-            label18.Size = new Size(10, 15);
-            label18.TabIndex = 22;
-            label18.Text = ",";
-            // 
-            // comboBox4
-            // 
-            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { "null", "fun", "roleplay", "scenic", "movie", "realism", "cartoon", "water", "comic", "build" });
-            comboBox4.Location = new Point(267, 74);
-            comboBox4.Margin = new Padding(3, 2, 3, 2);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(96, 23);
-            comboBox4.TabIndex = 21;
-            // 
-            // comboBox3
-            // 
-            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "fun", "roleplay", "scenic", "movie", "realism", "cartoon", "water", "comic", "build" });
-            comboBox3.Location = new Point(156, 74);
-            comboBox3.Margin = new Padding(3, 2, 3, 2);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(96, 23);
-            comboBox3.TabIndex = 20;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(7, 76);
-            label17.Name = "label17";
-            label17.Size = new Size(130, 15);
-            label17.TabIndex = 19;
-            label17.Text = "Addon Tags (Required):";
-            // 
-            // comboBox2
-            // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "ServerContent", "gamemode", "map", "weapon", "vehicle", "npc", "tool", "effects", "model", "entity" });
-            comboBox2.Location = new Point(158, 43);
-            comboBox2.Margin = new Padding(3, 2, 3, 2);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(133, 23);
-            comboBox2.TabIndex = 18;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(7, 45);
-            label15.Name = "label15";
-            label15.Size = new Size(131, 15);
-            label15.TabIndex = 17;
-            label15.Text = "Addon Type (Required):";
-            // 
-            // checkBox6
-            // 
-            checkBox6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(9, 13);
-            checkBox6.Margin = new Padding(3, 2, 3, 2);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(124, 19);
-            checkBox6.TabIndex = 16;
-            checkBox6.Text = "Pack into .gma file";
-            checkBox6.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             button2.Cursor = Cursors.Hand;
@@ -692,6 +693,8 @@
             tabControl1.ResumeLayout(false);
             info.ResumeLayout(false);
             info.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             option.ResumeLayout(false);
             option.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -700,8 +703,6 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            gma.ResumeLayout(false);
-            gma.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -753,14 +754,14 @@
         private Label label7;
         private PictureBox pictureBox2;
         private CheckBox checkBox5;
-        private TabPage gma;
+        private Label label19;
+        private Label label18;
+        private ComboBox comboBox4;
         private ComboBox comboBox3;
         private Label label17;
         private ComboBox comboBox2;
         private Label label15;
         private CheckBox checkBox6;
-        private Label label18;
-        private ComboBox comboBox4;
-        private Label label19;
+        private GroupBox groupBox3;
     }
 }
