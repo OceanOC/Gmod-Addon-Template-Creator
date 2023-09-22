@@ -44,11 +44,6 @@ namespace GmodAddonCreator
             backgroundWorker1.RunWorkerAsync();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://tomdotbat.dev/");
-        }
-
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             int num = new Random().Next(0000, 9999);
@@ -121,6 +116,12 @@ namespace GmodAddonCreator
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: derma\\basic.lua\n"));
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 form = new Form3();
+            form.ShowDialog();
         }
     }
 }

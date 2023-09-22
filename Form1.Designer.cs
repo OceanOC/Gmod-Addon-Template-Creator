@@ -35,6 +35,7 @@
             tabControl1 = new TabControl();
             info = new TabPage();
             groupBox3 = new GroupBox();
+            label20 = new Label();
             comboBox2 = new ComboBox();
             label19 = new Label();
             label15 = new Label();
@@ -83,6 +84,7 @@
             openFileDialog3 = new OpenFileDialog();
             button5 = new Button();
             openFileDialog4 = new OpenFileDialog();
+            groupBox4 = new GroupBox();
             tabControl1.SuspendLayout();
             info.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -91,6 +93,7 @@
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
@@ -165,6 +168,7 @@
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            groupBox3.Controls.Add(label20);
             groupBox3.Controls.Add(comboBox2);
             groupBox3.Controls.Add(label19);
             groupBox3.Controls.Add(label15);
@@ -178,6 +182,15 @@
             groupBox3.TabIndex = 32;
             groupBox3.TabStop = false;
             groupBox3.Text = "JSON Settings";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(253, 52);
+            label20.Name = "label20";
+            label20.Size = new Size(10, 15);
+            label20.TabIndex = 32;
+            label20.Text = ",";
             // 
             // comboBox2
             // 
@@ -255,9 +268,9 @@
             checkBox6.Location = new Point(6, 155);
             checkBox6.Margin = new Padding(3, 2, 3, 2);
             checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(83, 19);
+            checkBox6.Size = new Size(117, 19);
             checkBox6.TabIndex = 24;
-            checkBox6.Text = "Make .json";
+            checkBox6.Text = "Make addon.json";
             checkBox6.UseVisualStyleBackColor = true;
             checkBox6.CheckedChanged += checkBox6_CheckedChanged;
             // 
@@ -356,6 +369,7 @@
             // option
             // 
             option.AutoScroll = true;
+            option.Controls.Add(groupBox4);
             option.Controls.Add(checkBox5);
             option.Controls.Add(groupBox2);
             option.Controls.Add(checkBox4);
@@ -392,11 +406,11 @@
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(textBox8);
             groupBox2.Enabled = false;
-            groupBox2.Location = new Point(293, 4);
+            groupBox2.Location = new Point(361, 6);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 2, 3, 2);
-            groupBox2.Size = new Size(234, 96);
+            groupBox2.Size = new Size(234, 102);
             groupBox2.TabIndex = 6;
             groupBox2.TabStop = false;
             groupBox2.Text = "Map Options";
@@ -453,24 +467,16 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(label16);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(pictureBox2);
-            groupBox1.Controls.Add(label14);
-            groupBox1.Controls.Add(label13);
-            groupBox1.Controls.Add(button6);
             groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(textBox7);
             groupBox1.Controls.Add(label8);
             groupBox1.Enabled = false;
-            groupBox1.Location = new Point(533, 4);
+            groupBox1.Location = new Point(601, 4);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(238, 334);
+            groupBox1.Size = new Size(238, 104);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Gamemode Options";
@@ -478,7 +484,7 @@
             // button3
             // 
             button3.Cursor = Cursors.Hand;
-            button3.Location = new Point(5, 305);
+            button3.Location = new Point(3, 219);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(150, 22);
@@ -491,7 +497,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(9, 284);
+            label16.Location = new Point(7, 198);
             label16.Name = "label16";
             label16.Size = new Size(93, 15);
             label16.TabIndex = 22;
@@ -500,7 +506,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(9, 269);
+            label7.Location = new Point(7, 183);
             label7.Name = "label7";
             label7.Size = new Size(62, 15);
             label7.TabIndex = 21;
@@ -511,7 +517,7 @@
             pictureBox2.BackColor = Color.Silver;
             pictureBox2.ErrorImage = null;
             pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(161, 269);
+            pictureBox2.Location = new Point(159, 183);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(72, 58);
@@ -523,7 +529,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(63, 217);
+            label14.Location = new Point(61, 126);
             label14.Name = "label14";
             label14.Size = new Size(110, 15);
             label14.TabIndex = 19;
@@ -532,7 +538,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(7, 110);
+            label13.Location = new Point(5, 19);
             label13.Name = "label13";
             label13.Size = new Size(120, 15);
             label13.TabIndex = 18;
@@ -541,7 +547,7 @@
             // button6
             // 
             button6.Cursor = Cursors.Hand;
-            button6.Location = new Point(5, 234);
+            button6.Location = new Point(3, 143);
             button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
             button6.Size = new Size(228, 22);
@@ -564,7 +570,7 @@
             pictureBox1.BackColor = Color.Silver;
             pictureBox1.ErrorImage = null;
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(5, 127);
+            pictureBox1.Location = new Point(3, 36);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(228, 88);
@@ -674,6 +680,23 @@
             openFileDialog4.FileName = "openFileDialog4";
             openFileDialog4.Filter = "Image files (*.png)|*.png|All files (*.*)|*.*";
             // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(label14);
+            groupBox4.Controls.Add(button3);
+            groupBox4.Controls.Add(label13);
+            groupBox4.Controls.Add(label7);
+            groupBox4.Controls.Add(button6);
+            groupBox4.Controls.Add(label16);
+            groupBox4.Controls.Add(pictureBox2);
+            groupBox4.Controls.Add(pictureBox1);
+            groupBox4.Location = new Point(601, 113);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(238, 244);
+            groupBox4.TabIndex = 8;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Gamemode Icons";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -703,6 +726,8 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -763,5 +788,7 @@
         private Label label15;
         private CheckBox checkBox6;
         private GroupBox groupBox3;
+        private Label label20;
+        private GroupBox groupBox4;
     }
 }
