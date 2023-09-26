@@ -7,8 +7,8 @@ namespace GmodAddonCreator
     {
         private string appdat = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         private string catgory = "";
-        private string mapfilter;
-        private string mapfile;
+        private string? mapfilter;
+        private string? mapfile;
         private bool iicon = false;
         private bool sicon = false;
         public Form1()
@@ -238,10 +238,12 @@ namespace GmodAddonCreator
             if (checkBox3.Checked)
             {
                 groupBox1.Enabled = true;
+                groupBox4.Enabled = true;
             }
             else
             {
                 groupBox1.Enabled = false;
+                groupBox4.Enabled = false;
             }
         }
 
@@ -297,6 +299,16 @@ namespace GmodAddonCreator
             {
                 groupBox3.Enabled = false;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Winforms designer moves the groupboxes unless i do this shitty terribleness
+            groupBox4.Location = new Point(426, 118);
+
+            // No matter what i do the Y postion doesnt change WTF?
+            groupBox2.Location = new Point(375, 7);
+            groupBox1.Location = new Point(621, 9);
         }
     }
 }

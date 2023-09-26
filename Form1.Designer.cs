@@ -55,6 +55,16 @@
             textBox2 = new TextBox();
             label2 = new Label();
             option = new TabPage();
+            groupBox4 = new GroupBox();
+            panel1 = new Panel();
+            label14 = new Label();
+            button3 = new Button();
+            label13 = new Label();
+            label7 = new Label();
+            button6 = new Button();
+            label16 = new Label();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             checkBox5 = new CheckBox();
             groupBox2 = new GroupBox();
             button4 = new Button();
@@ -63,15 +73,7 @@
             textBox8 = new TextBox();
             checkBox4 = new CheckBox();
             groupBox1 = new GroupBox();
-            button3 = new Button();
-            label16 = new Label();
-            label7 = new Label();
-            pictureBox2 = new PictureBox();
-            label14 = new Label();
-            label13 = new Label();
-            button6 = new Button();
             label10 = new Label();
-            pictureBox1 = new PictureBox();
             label9 = new Label();
             textBox7 = new TextBox();
             label8 = new Label();
@@ -84,16 +86,15 @@
             openFileDialog3 = new OpenFileDialog();
             button5 = new Button();
             openFileDialog4 = new OpenFileDialog();
-            groupBox4 = new GroupBox();
             tabControl1.SuspendLayout();
             info.SuspendLayout();
             groupBox3.SuspendLayout();
             option.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox1.SuspendLayout();
+            groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBox4.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
@@ -386,6 +387,121 @@
             option.Text = "Templates and Options";
             option.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(panel1);
+            groupBox4.Controls.Add(label14);
+            groupBox4.Controls.Add(button3);
+            groupBox4.Controls.Add(label13);
+            groupBox4.Controls.Add(label7);
+            groupBox4.Controls.Add(button6);
+            groupBox4.Controls.Add(label16);
+            groupBox4.Controls.Add(pictureBox2);
+            groupBox4.Controls.Add(pictureBox1);
+            groupBox4.Enabled = false;
+            groupBox4.Location = new Point(426, 102);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(403, 171);
+            groupBox4.TabIndex = 8;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Gamemode Icons";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Silver;
+            panel1.Location = new Point(237, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1, 159);
+            panel1.TabIndex = 24;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(61, 126);
+            label14.Name = "label14";
+            label14.Size = new Size(110, 15);
+            label14.TabIndex = 19;
+            label14.Text = "Max size: 128x1024";
+            // 
+            // button3
+            // 
+            button3.Cursor = Cursors.Hand;
+            button3.Location = new Point(245, 143);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(152, 22);
+            button3.TabIndex = 23;
+            button3.Text = "Browse..";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(5, 19);
+            label13.Name = "label13";
+            label13.Size = new Size(120, 15);
+            label13.TabIndex = 18;
+            label13.Text = "Gamemode Title Icon";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(286, 16);
+            label7.Name = "label7";
+            label7.Size = new Size(62, 15);
+            label7.TabIndex = 21;
+            label7.Text = "Small Icon";
+            // 
+            // button6
+            // 
+            button6.Cursor = Cursors.Hand;
+            button6.Location = new Point(3, 143);
+            button6.Margin = new Padding(3, 2, 3, 2);
+            button6.Name = "button6";
+            button6.Size = new Size(228, 22);
+            button6.TabIndex = 5;
+            button6.Text = "Browse..";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(275, 126);
+            label16.Name = "label16";
+            label16.Size = new Size(93, 15);
+            label16.TabIndex = 22;
+            label16.Text = "Max size: 32x32";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Silver;
+            pictureBox2.ErrorImage = null;
+            pictureBox2.InitialImage = null;
+            pictureBox2.Location = new Point(275, 33);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(91, 91);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 20;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Silver;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.InitialImage = null;
+            pictureBox1.Location = new Point(3, 36);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(228, 88);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // checkBox5
             // 
             checkBox5.AutoSize = true;
@@ -406,7 +522,7 @@
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(textBox8);
             groupBox2.Enabled = false;
-            groupBox2.Location = new Point(361, 6);
+            groupBox2.Location = new Point(347, 11);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 2, 3, 2);
@@ -472,7 +588,7 @@
             groupBox1.Controls.Add(textBox7);
             groupBox1.Controls.Add(label8);
             groupBox1.Enabled = false;
-            groupBox1.Location = new Point(601, 4);
+            groupBox1.Location = new Point(587, 9);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
@@ -480,81 +596,6 @@
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Gamemode Options";
-            // 
-            // button3
-            // 
-            button3.Cursor = Cursors.Hand;
-            button3.Location = new Point(3, 219);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 22);
-            button3.TabIndex = 23;
-            button3.Text = "Browse..";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(7, 198);
-            label16.Name = "label16";
-            label16.Size = new Size(93, 15);
-            label16.TabIndex = 22;
-            label16.Text = "Max size: 32x32";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(7, 183);
-            label7.Name = "label7";
-            label7.Size = new Size(62, 15);
-            label7.TabIndex = 21;
-            label7.Text = "Small Icon";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.Silver;
-            pictureBox2.ErrorImage = null;
-            pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(159, 183);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(72, 58);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 20;
-            pictureBox2.TabStop = false;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(61, 126);
-            label14.Name = "label14";
-            label14.Size = new Size(110, 15);
-            label14.TabIndex = 19;
-            label14.Text = "Max size: 128x1024";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(5, 19);
-            label13.Name = "label13";
-            label13.Size = new Size(120, 15);
-            label13.TabIndex = 18;
-            label13.Text = "Gamemode Title Icon";
-            // 
-            // button6
-            // 
-            button6.Cursor = Cursors.Hand;
-            button6.Location = new Point(3, 143);
-            button6.Margin = new Padding(3, 2, 3, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(228, 22);
-            button6.TabIndex = 5;
-            button6.Text = "Browse..";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
             // 
             // label10
             // 
@@ -564,19 +605,6 @@
             label10.Size = new Size(155, 15);
             label10.TabIndex = 17;
             label10.Text = "Ex: \"gm_\" = \"gm_construct\"";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Silver;
-            pictureBox1.ErrorImage = null;
-            pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(3, 36);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(228, 88);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // label9
             // 
@@ -680,23 +708,6 @@
             openFileDialog4.FileName = "openFileDialog4";
             openFileDialog4.Filter = "Image files (*.png)|*.png|All files (*.*)|*.*";
             // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(label14);
-            groupBox4.Controls.Add(button3);
-            groupBox4.Controls.Add(label13);
-            groupBox4.Controls.Add(label7);
-            groupBox4.Controls.Add(button6);
-            groupBox4.Controls.Add(label16);
-            groupBox4.Controls.Add(pictureBox2);
-            groupBox4.Controls.Add(pictureBox1);
-            groupBox4.Location = new Point(601, 113);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(238, 244);
-            groupBox4.TabIndex = 8;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Gamemode Icons";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -713,6 +724,7 @@
             MinimumSize = new Size(897, 410);
             Name = "Form1";
             Text = "GMOD Addon Template Creator";
+            Load += Form1_Load;
             tabControl1.ResumeLayout(false);
             info.ResumeLayout(false);
             info.PerformLayout();
@@ -720,14 +732,14 @@
             groupBox3.PerformLayout();
             option.ResumeLayout(false);
             option.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -790,5 +802,6 @@
         private GroupBox groupBox3;
         private Label label20;
         private GroupBox groupBox4;
+        private Panel panel1;
     }
 }
