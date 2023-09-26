@@ -6,6 +6,7 @@ I may release this some time when i think its ready until then, you will have to
 
 Most things are unfinished right now so please wait while I improve this and make new features.
 
+![Current Build](https://github.com/OceanOC/Gmod-Addon-Template-Creator/actions/workflows/dotnet.yml/badge.svg)
 # Building
 Requirements: Visual Studio 2022
 1. Open Solution
