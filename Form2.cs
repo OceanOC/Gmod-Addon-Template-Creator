@@ -55,28 +55,40 @@ namespace GmodAddonCreator
             if (!Directory.Exists(appdat + @"\GMOD Template Creator\swep_weapon"))
             {
                 Directory.CreateDirectory(appdat + @"\GMOD Template Creator\swep_weapon");
-                WebClient client = new WebClient();
-                client.DownloadFile(@"https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/swep_weapon/cl_init.lua", appdat + @"\GMOD Template Creator\swep_weapon\cl_init.lua");
+                using var client = new HttpClient();
+                var clinit = client.GetStringAsync("https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/swep_weapon/cl_init.lua");
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "\nDownloaded: swep_weapon\\cl_init.lua\n"));
-                client.DownloadFile(@"https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/swep_weapon/init.lua", appdat + @"\GMOD Template Creator\swep_weapon\init.lua");
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 20));
+                var init = client.GetStringAsync("https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/swep_weapon/init.lua");
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: swep_weapon\\init.lua\n"));
                 Thread.Sleep(num);
-                client.DownloadFile(@"https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/swep_weapon/shared.lua", appdat + @"\GMOD Template Creator\swep_weapon\shared.lua");
+                var share = client.GetStringAsync("https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/swep_weapon/shared.lua");
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: swep_weapon\\shared.lua\n"));
+
+                // Make files
                 client.Dispose();
+            } else
+            {
+                Invoke(new ToDoDelegate(() => progressBar1.Value += 30));
             }
             if (!Directory.Exists(appdat + @"\GMOD Template Creator\gmod_tool"))
             {
                 Directory.CreateDirectory(appdat + @"\GMOD Template Creator\gmod_tool");
                 Directory.CreateDirectory(appdat + @"\GMOD Template Creator\gmod_tool\stools");
-                WebClient client = new WebClient();
-                client.DownloadFile(@"https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/gmod_tool/stools/stool.lua", appdat + @"\GMOD Template Creator\gmod_tool\stools\stool.lua");
+                using var client = new HttpClient();
+                var stool = client.GetStringAsync("https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/gmod_tool/stools/stool.lua");
+                File.Create(appdat + @"\GMOD Template Creator\gmod_tool\stools\stool.lua").Dispose();
+                File.WriteAllText(appdat + @"\GMOD Template Creator\gmod_tool\stools\stool.lua", stool.ToString());
                 client.Dispose();
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: gmod_tool\\stools\\stool.lua\n"));
             }
+            else
+            {
+                Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
+            }
+
             if (!Directory.Exists(appdat + @"\GMOD Template Creator\autorun"))
             {
                 Directory.CreateDirectory(appdat + @"\GMOD Template Creator\autorun");
@@ -85,6 +97,10 @@ namespace GmodAddonCreator
                 client.Dispose();
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: autorun\\sh_loader.lua\n"));
+            }
+            else
+            {
+                Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
             }
             if (!Directory.Exists(appdat + @"\GMOD Template Creator\maps"))
             {
@@ -95,6 +111,10 @@ namespace GmodAddonCreator
                 client.Dispose();
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: maps\\gatc_example.bsp\n"));
+            }
+            else
+            {
+                Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
             }
             if (!Directory.Exists(appdat + @"\GMOD Template Creator\gamemode"))
             {
@@ -107,6 +127,10 @@ namespace GmodAddonCreator
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 20));
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: gamemode\\cl_init.lua\n"));
             }
+            else
+            {
+                Invoke(new ToDoDelegate(() => progressBar1.Value += 20));
+            }
             if (!Directory.Exists(appdat + @"\GMOD Template Creator\derma"))
             {
                 Directory.CreateDirectory(appdat + @"\GMOD Template Creator\derma");
@@ -115,6 +139,10 @@ namespace GmodAddonCreator
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: derma\\basic.lua\n"));
 
+            }
+            else
+            {
+                Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
             }
         }
 

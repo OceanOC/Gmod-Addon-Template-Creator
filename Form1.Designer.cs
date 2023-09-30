@@ -65,7 +65,6 @@
             label16 = new Label();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            checkBox5 = new CheckBox();
             groupBox2 = new GroupBox();
             button4 = new Button();
             label12 = new Label();
@@ -86,6 +85,7 @@
             openFileDialog3 = new OpenFileDialog();
             button5 = new Button();
             openFileDialog4 = new OpenFileDialog();
+            button7 = new Button();
             tabControl1.SuspendLayout();
             info.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -371,7 +371,6 @@
             // 
             option.AutoScroll = true;
             option.Controls.Add(groupBox4);
-            option.Controls.Add(checkBox5);
             option.Controls.Add(groupBox2);
             option.Controls.Add(checkBox4);
             option.Controls.Add(groupBox1);
@@ -501,18 +500,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // checkBox5
-            // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(5, 101);
-            checkBox5.Margin = new Padding(3, 2, 3, 2);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(112, 19);
-            checkBox5.TabIndex = 7;
-            checkBox5.Text = "Derma Template";
-            checkBox5.UseVisualStyleBackColor = true;
-            checkBox5.CheckedChanged += checkBox5_CheckedChanged;
             // 
             // groupBox2
             // 
@@ -708,11 +695,22 @@
             openFileDialog4.FileName = "openFileDialog4";
             openFileDialog4.Filter = "Image files (*.png)|*.png|All files (*.*)|*.*";
             // 
+            // button7
+            // 
+            button7.Location = new Point(751, 8);
+            button7.Name = "button7";
+            button7.Size = new Size(117, 23);
+            button7.TabIndex = 6;
+            button7.Text = "Check For Updates";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(881, 371);
+            Controls.Add(button7);
             Controls.Add(button5);
             Controls.Add(button2);
             Controls.Add(tabControl1);
@@ -790,7 +788,6 @@
         private Label label16;
         private Label label7;
         private PictureBox pictureBox2;
-        private CheckBox checkBox5;
         private Label label19;
         private Label label18;
         private ComboBox comboBox4;
@@ -803,5 +800,6 @@
         private Label label20;
         private GroupBox groupBox4;
         private Panel panel1;
+        private Button button7;
     }
 }

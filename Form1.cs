@@ -5,6 +5,7 @@ namespace GmodAddonCreator
 {
     public partial class Form1 : Form
     {
+        private float ver = 2;
         private string appdat = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         private string catgory = "";
         private string? mapfilter;
@@ -14,21 +15,7 @@ namespace GmodAddonCreator
         public Form1()
         {
             InitializeComponent();
-            if (!Directory.Exists(appdat + @"\GMOD Template Creator"))
-            {
-                Form2 form = new Form2();
-                form.ShowDialog();
-            }
-            if (!Directory.Exists(appdat + @"\GMOD Template Creator\swep_weapon"))
-            {
-                Form2 form = new Form2();
-                form.ShowDialog();
-            }
-            if (!Directory.Exists(appdat + @"\GMOD Template Creator\gmod_tool"))
-            {
-                Form2 form = new Form2();
-                form.ShowDialog();
-            }
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -160,12 +147,12 @@ namespace GmodAddonCreator
                         File.Copy(openFileDialog1.FileName, addonfolder + @"\gamemodes\" + textBox2.Text.ToLower().Replace(" ", "") + @"\logo24.png");
                     }
                 }
-                if (checkBox5.Checked)
-                {
-                    // derma
-                    Directory.CreateDirectory(addonfolder + @"\lua\derma");
-                    File.Copy(appdat + "\\GMOD Template Creator\\derma\\basic.lua", addonfolder + @"\lua\client\basic.lua");
-                }
+                // derma removed
+                //if (checkBox5.Checked)
+                //{
+                //    Directory.CreateDirectory(addonfolder + @"\lua\derma");
+                //    File.Copy(appdat + "\\GMOD Template Creator\\derma\\basic.lua", addonfolder + @"\lua\client\basic.lua");
+                //}
 
                 if (checkBox6.Checked)
                 {
@@ -300,15 +287,40 @@ namespace GmodAddonCreator
                 groupBox3.Enabled = false;
             }
         }
+        private async void button7_Click(object sender, EventArgs e)
+        {
+            // update
+            float cver = 0;
+            using var client = new HttpClient();
+            var content = await client.GetStringAsync("https://raw.githubusercontent.com/OceanOC/Gmod-Addon-Template-Creator/master/ver.txt");
+            float.TryParse(content, out cver);
+            Debug.WriteLine(cver);
+            if (cver == ver)
+            {
+                MessageBox.Show("No New Update available");
+            } else
+            {
+                MessageBox.Show("New Update available");
+            }
+            client.Dispose();
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // Winforms designer moves the groupboxes unless i do this shitty terribleness
             groupBox4.Location = new Point(426, 118);
+            groupBox1.Location = new Point(621, 9);
 
             // No matter what i do the Y postion doesnt change WTF?
             groupBox2.Location = new Point(375, 7);
-            groupBox1.Location = new Point(621, 9);
+
+            // Show download dialog if appdata folder isnt made
+            if (!Directory.Exists(appdat + @"\GMOD Template Creator"))
+            {
+                Form2 form = new();
+                form.ShowDialog();
+            }
         }
+
     }
 }
