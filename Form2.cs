@@ -44,7 +44,7 @@ namespace GmodAddonCreator
             backgroundWorker1.RunWorkerAsync();
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private async void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             int num = new Random().Next(0000, 9999);
             int num2 = new Random().Next(0000, 9999);
@@ -71,11 +71,11 @@ namespace GmodAddonCreator
                 clinit.Wait();
                 // Make files
                 File.Create(appdat + @"\GMOD Template Creator\swep_weapon\cl_init.lua").Dispose();
-                File.WriteAllText(appdat + @"\GMOD Template Creator\swep_weapon\cl_init.lua", clinit.ToString());
+                File.WriteAllText(appdat + @"\GMOD Template Creator\swep_weapon\cl_init.lua", clinit.Result);
                 File.Create(appdat + @"\GMOD Template Creator\swep_weapon\init.lua").Dispose();
-                File.WriteAllText(appdat + @"\GMOD Template Creator\swep_weapon\init.lua", init.ToString());
+                File.WriteAllText(appdat + @"\GMOD Template Creator\swep_weapon\init.lua", init.Result);
                 File.Create(appdat + @"\GMOD Template Creator\swep_weapon\shared.lua").Dispose();
-                File.WriteAllText(appdat + @"\GMOD Template Creator\swep_weapon\shared.lua", share.ToString());
+                File.WriteAllText(appdat + @"\GMOD Template Creator\swep_weapon\shared.lua", share.Result);
 
                 // Clear memory
                 share.Dispose();
@@ -93,8 +93,10 @@ namespace GmodAddonCreator
                 using var client = new HttpClient();
                 var stool = client.GetAsync("https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/gmod_tool/stools/stool.lua");
                 stool.Wait();
+                // Make files
                 File.Create(appdat + @"\GMOD Template Creator\gmod_tool\stools\stool.lua").Dispose();
-                File.WriteAllText(appdat + @"\GMOD Template Creator\gmod_tool\stools\stool.lua", stool.ToString());
+                File.WriteAllText(appdat + @"\GMOD Template Creator\gmod_tool\stools\stool.lua", stool.Result); // I have no idea why this will not work
+                // clear memory
                 stool.Dispose();
                 client.Dispose();
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
@@ -113,7 +115,7 @@ namespace GmodAddonCreator
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: autorun\\sh_loader.lua\n"));
                 File.Create(appdat + @"\GMOD Template Creator\autorun\sh_loader.lua").Dispose();
-                File.WriteAllText(appdat + @"\GMOD Template Creator\autorun\sh_loader.lua", shloader.ToString());
+                File.WriteAllText(appdat + @"\GMOD Template Creator\autorun\sh_loader.lua", shloader.Result);
                 shloader.Dispose();
                 client.Dispose();
             }
@@ -144,9 +146,9 @@ namespace GmodAddonCreator
                 Invoke(new ToDoDelegate(() => richTextBox1.Text += "Downloaded: gamemode\\init.lua\n"));
                 var cinit = client.GetStringAsync("https://raw.githubusercontent.com/OceanOC/Gmod-Addon-Template-Creator/master/gamemode/cl_init.lua");
                 File.Create(appdat + @"\GMOD Template Creator\gamemode\cl_init.lua").Dispose();
-                File.WriteAllText(appdat + @"\GMOD Template Creator\gamemode\cl_init.lua", cinit.ToString());
+                File.WriteAllText(appdat + @"\GMOD Template Creator\gamemode\cl_init.lua", cinit.Result);
                 File.Create(appdat + @"\GMOD Template Creator\gamemode\init.lua").Dispose();
-                File.WriteAllText(appdat + @"\GMOD Template Creator\gamemode\init.lua", init.ToString());
+                File.WriteAllText(appdat + @"\GMOD Template Creator\gamemode\init.lua", init.Result);
                 init.Wait();
                 cinit.Wait();
                 init.Dispose();
