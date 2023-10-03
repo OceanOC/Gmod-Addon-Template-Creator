@@ -91,11 +91,11 @@ namespace GmodAddonCreator
                 Directory.CreateDirectory(appdat + @"\GMOD Template Creator\gmod_tool");
                 Directory.CreateDirectory(appdat + @"\GMOD Template Creator\gmod_tool\stools");
                 using var client = new HttpClient();
-                var stool = client.GetAsync("https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/gmod_tool/stools/stool.lua");
+                var stool = client.GetStringAsync("https://raw.githubusercontent.com/TomDotBat/gmod-templates/master/lua/weapons/gmod_tool/stools/stool.lua");
                 stool.Wait();
                 // Make files
                 File.Create(appdat + @"\GMOD Template Creator\gmod_tool\stools\stool.lua").Dispose();
-                File.WriteAllText(appdat + @"\GMOD Template Creator\gmod_tool\stools\stool.lua", stool.Result); // I have no idea why this will not work
+                File.WriteAllText(appdat + @"\GMOD Template Creator\gmod_tool\stools\stool.lua", stool.Result);
                 // clear memory
                 stool.Dispose();
                 client.Dispose();
