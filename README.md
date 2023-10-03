@@ -8,9 +8,8 @@ Most things are unfinished right now so please wait while I improve this and mak
 
 ![Current Build](https://github.com/OceanOC/Gmod-Addon-Template-Creator/actions/workflows/dotnet.yml/badge.svg)
 # Building
-Requirements: Visual Studio 2022
-1. Open Solution
-2. Build Solution
+Requirements: .NET 6.0.x
+1. dotnet build (put .csproj here)
 
 # Credits
 SWEP and tool scripts: [TomDotBat](https://tomdotbat.dev)
