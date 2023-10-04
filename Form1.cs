@@ -41,7 +41,7 @@ namespace GmodAddonCreator
             {
                 string addonfolder = textBox1.Text + @"\garrysmod\addons\" + textBox2.Text.ToLower().Replace(" ", "");
                 // Making sure nothing errors out
-                if (comboBox1 == null)
+                if (comboBox1.SelectedText == null)
                 {
                     comboBox1.SelectedText = "OTHER";
                 }
@@ -298,7 +298,8 @@ namespace GmodAddonCreator
             if (cver == ver)
             {
                 MessageBox.Show("No New Update available");
-            } else
+            }
+            else
             {
                 MessageBox.Show("New Update available");
             }
@@ -321,6 +322,5 @@ namespace GmodAddonCreator
                 form.ShowDialog();
             }
         }
-
     }
 }

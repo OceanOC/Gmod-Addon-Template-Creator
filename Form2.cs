@@ -44,7 +44,7 @@ namespace GmodAddonCreator
             backgroundWorker1.RunWorkerAsync();
         }
 
-        private async void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             int num = new Random().Next(0000, 9999);
             int num2 = new Random().Next(0000, 9999);
@@ -128,7 +128,6 @@ namespace GmodAddonCreator
                 // WebClient is required to download
                 Directory.CreateDirectory(appdat + @"\GMOD Template Creator\maps");
                 WebClient client = new WebClient();
-                Thread.Sleep(num2);
                 client.DownloadFile(@"https://raw.githubusercontent.com/OceanOC/Gmod-Addon-Template-Creator/master/examples/gatc_example.bsp", appdat + @"\GMOD Template Creator\maps\gatc_example.bsp");
                 client.Dispose();
                 Invoke(new ToDoDelegate(() => progressBar1.Value += 10));
