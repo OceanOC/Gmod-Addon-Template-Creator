@@ -1,10 +1,10 @@
-# Gmod Addon Template Creator
+# (Unofficial) Gmod Addon Template Creator
 A small app to make addon templates to use and edit
 
-# STATUS: In Development 
-I may release this some time when i think its ready until then, you will have to build it yourself.
+**I am not affilated or related in anyway to Facepunch Studios**
 
-Most things are unfinished right now so please wait while I improve this and make new features.
+# STATUS: DEAD ❌
+This project is dead since i no longer have any interest in C#.
 
 ![Current Build](https://github.com/OceanOC/Gmod-Addon-Template-Creator/actions/workflows/dotnet.yml/badge.svg)
 # Building
